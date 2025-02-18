@@ -1,0 +1,32 @@
+django-phonenumber-field
+graphene-django==3.0.0  # or the version compatible with your project
+graphql-core==3.2.3
+celery==5.2.7  # or the appropriate version for your project
+sentry-sdk==2.9.0  # or the appropriate version for your project
+jaeger-client==4.5.0  # or another compatible version
+django-stubs-ext
+#pillow
+gunicorn
+django==3.2.8
+dj-database-url>=2.0.0
+dj-email-url==1.0.0
+django-cache-url==3.4.5
+pytimeparse
+django-storages
+psycopg2-binary
+django-celery-beat
+django-measurement
+django-prices
+django-mptt
+django-countries
+django-filter
+uvicorn
+draftjs-sanitizer
+phonenumbers
+oauthlib
+requests
+phonenumbers  # Needed for phone validation in Saleor
+boto3  # Required for AWS S3 storage
+django-redis
+redis
+

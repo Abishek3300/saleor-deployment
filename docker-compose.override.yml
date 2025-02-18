@@ -1,0 +1,7 @@
+version: "3.4"
+
+services:
+  api:
+    environment:
+      ALLOWED_HOSTS: "localhost,127.0.0.1,52.54.174.3,ec2-52-54-174-3.compute-1.amazonaws.com,saleor-alb-226312019.us-east-1.elb.amazonaws.com"
+

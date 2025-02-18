@@ -18,18 +18,27 @@ services:
       # shared volume between worker and api for media
       - saleor-media:/app/media
     env_file:
+      - .env
       - common.env
       - backend.env
     environment:
+      - API_URL=http://saleor-alb-226312019.us-east-1.elb.amazonaws.com/graphql/	
       - JAEGER_AGENT_HOST=jaeger
-      - DASHBOARD_URL=http://localhost:9000/
-      - ALLOWED_HOSTS=localhost,api
-
+      - CORS_ALLOWED_ORIGINS=http://saleor-alb-226312019.us-east-1.elb.amazonaws.com,http://saleor-alb-226312019.us-east-1.elb.amazonaws.com:9000
+      - DASHBOARD_URL=http://saleor-alb-226312019.us-east-1.elb.amazonaws.com:9000/
+      - ALLOWED_HOSTS=44.201.246.22,saleor-alb-226312019.us-east-1.elb.amazonaws.com,44.202.103.122,localhost,api,52.54.174.3
+      - GUNICORN_CMD_ARGS=--workers 2 --threads 2
   dashboard:
     image: ghcr.io/saleor/saleor-dashboard:latest
     ports:
       - 9000:80
     restart: unless-stopped
+    env_file:
+     - .env
+     - common.env
+     - backend.env
+    environment:
+     - API_URL=http://saleor-alb-226312019.us-east-1.elb.amazonaws.com/graphql/
 
   db:
     image: library/postgres:15-alpine
