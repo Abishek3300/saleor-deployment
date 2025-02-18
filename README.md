@@ -166,3 +166,4 @@ Some situations do call for extra code; we can cover exotic use cases or build y
 #### Crafted with ❤️ by [Saleor Commerce](https://saleor.io/)
 
 hello@saleor.io
+Test CI/CD
